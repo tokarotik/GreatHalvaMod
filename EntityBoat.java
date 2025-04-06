@@ -2,10 +2,10 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class EntityBirchBoat extends Entity {
+public class EntityBoat extends Entity {
     public int boatCurrentDamage;
     public int boatTimeSinceHit;
-    public int EntityCustomBoat;
+    public int boatRockDirection;
     private int boatPosRotationIncrements;
     private double boatX;
     private double boatY;
@@ -15,9 +15,8 @@ public class EntityBirchBoat extends Entity {
     private double velocityX;
     private double velocityY;
     private double velocityZ;
-	public int boatRockDirection;
 
-    public EntityBirchBoat(World var1) {
+    public EntityBoat(World var1) {
         super(var1);
         this.boatCurrentDamage = 0;
         this.boatTimeSinceHit = 0;
@@ -46,7 +45,7 @@ public class EntityBirchBoat extends Entity {
         return true;
     }
 
-    public EntityBirchBoat(World var1, double var2, double var4, double var6) {
+    public EntityBoat(World var1, double var2, double var4, double var6) {
         this(var1);
         this.setPosition(var2, var4 + (double)this.yOffset, var6);
         this.motionX = 0.0D;
@@ -60,10 +59,6 @@ public class EntityBirchBoat extends Entity {
     public double getMountedYOffset() {
         return (double)this.height * 0.0D - 0.30000001192092896D;
     }
-    
-    private void dropped() {
-    	this.dropItemWithOffset(mod_GreatHalva.BirchBoatItem.shiftedIndex, 1, 0.0F); 		
-    }
 
     public boolean attackEntityFrom(Entity var1, int var2) {
         if (!this.worldObj.multiplayerWorld && !this.isDead) {
@@ -76,7 +71,7 @@ public class EntityBirchBoat extends Entity {
                     this.riddenByEntity.mountEntity(this);
                 }
 
-                this.dropped();
+                this.dropItemWithOffset(Item.boat.shiftedIndex, 1, 0.0F); 	
 
                 this.setEntityDead();
             }

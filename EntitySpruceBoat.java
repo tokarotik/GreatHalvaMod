@@ -62,14 +62,7 @@ public class EntitySpruceBoat extends Entity {
     }
     
     private void dropped() {
-        int var3;
-        for(var3 = 0; var3 < 3; ++var3) {
-            this.dropItemWithOffset(mod_GreatHalva.SprucePlanks.blockID, 1, 0.0F);
-        }
-
-        for(var3 = 0; var3 < 2; ++var3) {
-            this.dropItemWithOffset(Item.stick.shiftedIndex, 1, 0.0F);
-        }    	
+        this.dropItemWithOffset(mod_GreatHalva.SpruceBoatItem.shiftedIndex, 1, 0.0F); 	
     }
 
     public boolean attackEntityFrom(Entity var1, int var2) {

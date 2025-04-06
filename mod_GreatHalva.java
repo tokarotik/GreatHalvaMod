@@ -95,7 +95,7 @@ public class mod_GreatHalva extends BaseMod{
 			});		
 
 		replaceWoodsRecipes();
-		addToBurnAndMine(mod_burn_blocks);
+		//addToBurnAndMine(mod_burn_blocks);
 	}
 	
 	
