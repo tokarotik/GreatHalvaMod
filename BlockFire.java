@@ -12,14 +12,9 @@ public class BlockFire extends Block {
     }
 
     public void initializeBlock() {
-        //this.setBurnRate(Block.planks.blockID, 5, 20);
-        //this.setBurnRate(Block.fence.blockID, 5, 20);
-        //this.setBurnRate(Block.stairCompactPlanks.blockID, 5, 20);
         this.setBurnRate(Block.wood.blockID, 5, 5);
         this.setBurnRate(Block.leaves.blockID, 30, 60);
-        //this.setBurnRate(Block.bookShelf.blockID, 30, 20);
         this.setBurnRate(Block.tnt.blockID, 15, 100);
-        //this.setBurnRate(Block.tallGrass.blockID, 60, 100);
         this.setBurnRate(Block.cloth.blockID, 30, 60);
     }
 

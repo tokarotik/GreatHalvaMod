@@ -3,6 +3,8 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Map;
 
+import net.mod.*;
+
 
 public class mod_GreatHalva extends BaseMod{
 	private static int[] planks_textures = new int[]
@@ -101,7 +103,7 @@ public class mod_GreatHalva extends BaseMod{
 	
 	
 	public String Version( ) {
-		return "1.2";
+		return "1.6";
 	}
     
 	public void AddRenderer(Map<Class<? extends Entity>, Render> map) {
