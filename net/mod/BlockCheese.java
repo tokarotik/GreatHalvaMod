@@ -9,6 +9,6 @@ public class BlockCheese extends Block {
     }
     
     public int idDropped(int var1, Random var2) {
-        return mod_GreatHalva.CheeseBlock.blockID;
+        return Blocks.CheeseBlock.blockID;
    }
 }

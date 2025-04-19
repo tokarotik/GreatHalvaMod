@@ -10,7 +10,7 @@ public class RenderSpruceBoat extends Render {
     public RenderSpruceBoat() {
         this.shadowSize = 0.5F;
         this.modelBoat = new ModelBoat();
-        this.boat_texture = "/greathalva/boat1.png";
+        this.boat_texture = mod_GreatHalva.boats_texture[0];
     }
 
     public void func_157_a(EntitySpruceBoat CustomBoat, double var2, double var4, double var6, float var8, float var9) {

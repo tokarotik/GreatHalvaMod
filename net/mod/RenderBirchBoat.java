@@ -10,7 +10,7 @@ public class RenderBirchBoat extends Render {
     public RenderBirchBoat() {
         this.shadowSize = 0.5F;
         this.modelBoat = new ModelBoat();
-        this.boat_texture = "/greathalva/boat2.png";
+        this.boat_texture = mod_GreatHalva.boats_texture[1];
     }
 
     public void func_157_a(EntityBirchBoat CustomBoat, double var2, double var4, double var6, float var8, float var9) {

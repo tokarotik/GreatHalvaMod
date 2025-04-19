@@ -26,7 +26,7 @@ public class BlockGlassDoor extends BlockDoor {
     }
     
     public int idDropped(int var1, Random var2) {
-    	return mod_GreatHalva.GlassDoorItem.shiftedIndex;
+    	return Items.GlassDoorItem.shiftedIndex;
 
     }
 }
