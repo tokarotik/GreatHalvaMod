@@ -24,8 +24,8 @@ public class Blocks {
 	public static final Block stairCompactPlanksSpruce = (new BlockStairs(102, SprucePlanks)).setBlockName("stairsWood").disableNeighborNotifyOnMetadataChange();
 	public static final Block stairCompactPlanksBirch = (new BlockStairs(103, BirchPlanks)).setBlockName("stairsWood").disableNeighborNotifyOnMetadataChange();
 
-	public static final Block ColouredCement = (new BlockCement(104)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setBlockName("cement");
-	
+	public static final Block ColoredCement = (new BlockCement(104)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setBlockName("cement");
+	public static final Block ColoredConcrete = (new BlockConcrete(105)).setHardness(2F).setStepSound(Block.soundStoneFootstep).setBlockName("concrete");
 	
 	public static void RegisterBlock() {
 		ModLoader.RegisterBlock(HalvaBlock);
@@ -34,11 +34,14 @@ public class Blocks {
 		ModLoader.RegisterBlock(BirchPlanks);
 		ModLoader.RegisterBlock(stairCompactPlanksSpruce);
 		ModLoader.RegisterBlock(stairCompactPlanksBirch);
-		ModLoader.RegisterBlock(ColouredCement, ItemCement.class);
+		
+		ModLoader.RegisterBlock(ColoredCement, ItemCement.class);
+		ModLoader.RegisterBlock(ColoredConcrete, ItemConcrete.class);
 	}
 	
 	public static void AddName() {
 		AddCementName();
+		AddConcreteName();
 		
 		ModLoader.AddName(SprucePlanks, "Planks");
 		ModLoader.AddName(BirchPlanks, "Planks");
@@ -57,7 +60,16 @@ public class Blocks {
 		for (int i = 0; i < BlockCement.textures.length; i++) {
 			String color = ItemDye.dyeColorNames[i];
 			String UppestColor = color.substring(0, 1).toUpperCase() + color.substring(1);
-			ModLoader.AddName(new ItemStack(ColouredCement, 1, i), UppestColor + " Cement");
+			ModLoader.AddName(new ItemStack(ColoredCement, 1, i), UppestColor + " Cement");
+			
+		}
+	}
+	
+	public static void AddConcreteName() {
+		for (int i = 0; i < BlockCement.textures.length; i++) {
+			String color = ItemDye.dyeColorNames[i];
+			String UppestColor = color.substring(0, 1).toUpperCase() + color.substring(1);
+			ModLoader.AddName(new ItemStack(ColoredConcrete, 1, i), UppestColor + " Concrete");
 			
 		}
 	}

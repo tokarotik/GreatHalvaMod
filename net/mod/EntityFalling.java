@@ -74,10 +74,10 @@ public class EntityFalling extends Entity {
                 !this.worldObj.setBlockAndMetadataWithNotify(x, y, z, this.blockID, this.metadata)) &&
                 !this.worldObj.multiplayerWorld
             ) {
-                this.dropItem(this.blockID, 1);
+                this.dropItem(this.blockID, 1, this.metadata);
             }
         } else if (this.fallTime > 100 && !this.worldObj.multiplayerWorld) {
-            this.dropItem(this.blockID, 1);
+            this.dropItem(this.blockID, 1, this.metadata);
             this.setEntityDead();
         }
     }

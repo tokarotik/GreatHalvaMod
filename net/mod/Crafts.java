@@ -37,13 +37,13 @@ public class Crafts {
 		
 		AddCraft(Blocks.HalvaBlock, 4, new Object[]{"XX", "XX", 'X', Block.dirt});
 		AddCraft(Blocks.CheeseBlock, new Object[]{"XY", 'X', Item.bucketMilk,  'Y', Item.bucketWater});
-		AddCraft(new ItemStack(Block.blockSteel, 1), new Object[] {"X", 'X', Block.dirt});
+		AddCraft(new ItemStack(Blocks.ColoredConcrete, 1, 1), new Object[] {"X", 'X', Block.dirt});
 	}
 	
 	public static void AddCementRecipes() {
 		for (int i = 0; i < BlockCement.textures.length; i++)
 		{
-			AddCraft(Blocks.ColouredCement, 8, i, new Object[]{
+			AddCraft(Blocks.ColoredCement, 8, i, new Object[]{
 			    "DXX",
 			    "XXY",
 			    "YYY",

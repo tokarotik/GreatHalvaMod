@@ -9,22 +9,22 @@ public class BlockCement extends Block {
 	public static boolean fallInstantly = false;
 	
 	static int[] textures = new int[] {
-			Blocks.addBlocktexture("coloured/cement/black.png"),
-			Blocks.addBlocktexture("coloured/cement/red.png"),
-			Blocks.addBlocktexture("coloured/cement/green.png"),
-			Blocks.addBlocktexture("coloured/cement/brown.png"),
-			Blocks.addBlocktexture("coloured/cement/blue.png"),
-			Blocks.addBlocktexture("coloured/cement/purple.png"),
-			Blocks.addBlocktexture("coloured/cement/cyan.png"),
-			Blocks.addBlocktexture("coloured/cement/silver.png"),
-			Blocks.addBlocktexture("coloured/cement/gray.png"),
-			Blocks.addBlocktexture("coloured/cement/pink.png"),
-			Blocks.addBlocktexture("coloured/cement/lime.png"),
-			Blocks.addBlocktexture("coloured/cement/yellow.png"),
-			Blocks.addBlocktexture("coloured/cement/lightBlue.png"),
-			Blocks.addBlocktexture("coloured/cement/magenta.png"),
-			Blocks.addBlocktexture("coloured/cement/orange.png"),
-			Blocks.addBlocktexture("coloured/cement/white.png")
+			Blocks.addBlocktexture("colored/cement/black.png"),
+			Blocks.addBlocktexture("colored/cement/red.png"),
+			Blocks.addBlocktexture("colored/cement/green.png"),
+			Blocks.addBlocktexture("colored/cement/brown.png"),
+			Blocks.addBlocktexture("colored/cement/blue.png"),
+			Blocks.addBlocktexture("colored/cement/purple.png"),
+			Blocks.addBlocktexture("colored/cement/cyan.png"),
+			Blocks.addBlocktexture("colored/cement/silver.png"),
+			Blocks.addBlocktexture("colored/cement/gray.png"),
+			Blocks.addBlocktexture("colored/cement/pink.png"),
+			Blocks.addBlocktexture("colored/cement/lime.png"),
+			Blocks.addBlocktexture("colored/cement/yellow.png"),
+			Blocks.addBlocktexture("colored/cement/lightBlue.png"),
+			Blocks.addBlocktexture("colored/cement/magenta.png"),
+			Blocks.addBlocktexture("colored/cement/orange.png"),
+			Blocks.addBlocktexture("colored/cement/white.png")
 	};
 	
     public BlockCement(int var1) {
@@ -39,7 +39,7 @@ public class BlockCement extends Block {
         	index = meta;
         }
         
-        return BlockCement.textures[index];
+        return textures[index];
     }
 
     public int damageDropped(int meta) {
@@ -90,7 +90,8 @@ public class BlockCement extends Block {
     public void updateTick(World world, int x, int y, int z, Random var5) {
         this.tryToFall(world, x, y, z);
         if (isTouchingWater(world, x, y, z)) {
-            world.setBlockWithNotify(x, y, z, Block.dirt.blockID);
+        	int meta = world.getBlockMetadata(x, y, z); 
+            world.setBlockAndMetadataWithNotify(x, y, z, Blocks.ColoredConcrete.blockID, meta);
         }
     }
 

@@ -21,7 +21,7 @@ public class mod_GreatHalva extends BaseMod{
 	
 	
 	public String Version( ) {
-		return "1.4";
+		return "1.5";
 	}
     
 	public void AddRenderer(Map<Class<? extends Entity>, Render> map) {
