@@ -3,6 +3,8 @@ package net.minecraft.src;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.lwjgl.opengl.GL11;
+
 public class Block {
     public static final StepSound soundPowderFootstep = new StepSound("stone", 1.0F, 1.0F);
     public static final StepSound soundWoodFootstep = new StepSound("wood", 1.0F, 1.0F);
@@ -191,8 +193,12 @@ public class Block {
     public boolean renderAsNormalBlock() {
         return true;
     }
-
+    
     public int getRenderType() {
+        return 0;
+    }
+    
+    public int doRender() {
         return 0;
     }
 

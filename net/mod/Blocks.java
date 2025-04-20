@@ -38,11 +38,7 @@ public class Blocks {
 	}
 	
 	public static void AddName() {
-        ModLoader.AddName(new ItemStack(ColouredCement, 1, 0), "Black Cement");
-        ModLoader.AddName(new ItemStack(ColouredCement, 1, 1), "Blue Cement");
-        ModLoader.AddName(new ItemStack(ColouredCement, 1, 2), "Brown Cement");
-        ModLoader.AddName(new ItemStack(ColouredCement, 1, 3), "Cyan Cement");
-		
+		AddCementName();
 		
 		ModLoader.AddName(SprucePlanks, "Planks");
 		ModLoader.AddName(BirchPlanks, "Planks");
@@ -57,32 +53,13 @@ public class Blocks {
 		ModLoader.AddName(GlassDoor, "Glass Block Door. Stop! Your're cheater?");
 	}
 	
-	public static void AddRecipe() {
-		AddCementRecipes();
-		
-		ModLoader.AddRecipe(new ItemStack(HalvaBlock, 4), new Object[]{
-			    "XX",
-			    "XX",
-			    Character.valueOf('X'), Block.dirt  
-			});
-		
-		ModLoader.AddRecipe(new ItemStack(CheeseBlock, 1), new Object[]{
-			    "XY", 
-			    Character.valueOf('X'), Item.bucketMilk,  
-			    Character.valueOf('Y'), Item.bucketWater
-			});
-	}
-	
-	public static void AddCementRecipes() {
-		for (int i = 0; i < BlockCement.textures.length; i++)
-		ModLoader.AddRecipe(new ItemStack(ColouredCement, 8, i), new Object[]{
-			    "DXX",
-			    "XXY",
-			    "YYY",
-			    Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, i),
-			    Character.valueOf('X'), Block.sand,
-			    Character.valueOf('Y'), Block.gravel 
-			});		
+	public static void AddCementName() {
+		for (int i = 0; i < BlockCement.textures.length; i++) {
+			String color = ItemDye.dyeColorNames[i];
+			String UppestColor = color.substring(0, 1).toUpperCase() + color.substring(1);
+			ModLoader.AddName(new ItemStack(ColouredCement, 1, i), UppestColor + " Cement");
+			
+		}
 	}
 
 	
