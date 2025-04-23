@@ -16,12 +16,13 @@ public class mod_GreatHalva extends BaseMod{
 		Entities.RegisterEntity();
 		
 		Crafts.AddRecipe();
+		Smelting.RegisterSmelting();
 	}
 	
 	
 	
 	public String Version( ) {
-		return "1.5";
+		return "1.7";
 	}
     
 	public void AddRenderer(Map<Class<? extends Entity>, Render> map) {
